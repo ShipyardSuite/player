@@ -3,7 +3,7 @@
 const { Player, Project } = require('./../models');
 const mongoose = require('mongoose');
 
-module.exports = (app, serviceName) => {
+module.exports = (app, logger, serviceName) => {
 	// Login or create player
 	app.post(`/${serviceName}/api/login`, (req, res, next) => {
 		const { body } = req;
@@ -92,6 +92,7 @@ module.exports = (app, serviceName) => {
 			},
 			(err, player) => {
 				if (err) {
+					logger.info(err);
 					return res.send({
 						success: false,
 						message: err
@@ -109,7 +110,7 @@ module.exports = (app, serviceName) => {
 	app.get(`/${serviceName}/api/info/:playerId`, (req, res, next) => {
 		Player.findById(req.params.playerId, (err, player) => {
 			if (err) {
-				console.log('error:', err);
+				logger.error(err);
 				return res.send({
 					success: false,
 					message: err
@@ -127,13 +128,14 @@ module.exports = (app, serviceName) => {
 	app.get(`/${serviceName}/api/all`, (req, res, next) => {
 		Player.find((err, players) => {
 			if (err) {
-				console.log('error:', err);
+				logger.error(err);
 				return res.send({
 					success: false,
 					message: err
 				});
 			}
 
+			logger.info('Getting all players');
 			return res.send({
 				success: true,
 				players
