@@ -7,7 +7,7 @@ const expect = require("chai").expect;
 describe("Example", function () {
 	describe("exampleFunction()", function () {
 		it("output should equal 'testService'", function () {
-			expect(exampleFunction()).to.equal("project");
+			expect(exampleFunction()).to.equal("player");
 		});
 	});
 });
