@@ -1,0 +1,161 @@
+http:
+    port: 8080
+admin:
+    port: 9876
+    host: 0.0.0.0
+apiEndpoints:
+
+    homepage:
+        host: '*'
+        paths: [ '/', '/homepage/*', '/homepage/images/*' ]
+
+    auth:
+        host: '*'
+        paths: [ '/auth/*' ]
+
+    documentation:
+        host: '*'
+        paths: [ '/documentation/*', '/documentation/*/*'  ]
+
+    dashboard:
+        host: '*'
+        paths: [ '/dashboard/*' ]
+
+    player:
+        host: '*'
+        paths: [ '/player/*' ]
+
+    project:
+        host: '*'
+        paths: [ '/project/*' ]
+
+    status:
+        host: '*'
+        paths: [ '/status/*' ]
+
+    user:
+        host: '*'
+        paths: [ '/user/*' ]
+
+    api:
+        host: '*'
+        paths: '/ip'
+serviceEndpoints:
+
+    homepage:
+        url: 'http://homepage:3001'
+
+    auth:
+        url: 'http://auth:3002'
+
+    documentation:
+        url: 'http://documentation:3003'
+
+    dashboard:
+        url: 'http://dashboard:3004'
+
+    player:
+        url: 'http://player:3006'
+
+    project:
+        url: 'http://project:3007'
+
+    status:
+        url: 'http://status:3008'
+
+    user:
+        url: 'http://user:3009'
+
+    httpbin:
+        url: 'https://httpbin.org'
+policies:
+    - basic-auth
+    - cors
+    - expression
+    - key-auth
+    - log
+    - oauth2
+    - proxy
+    - rate-limit
+pipelines:
+
+    homepage:
+        apiEndpoints:
+            - homepage
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: homepage
+                    changeOrigin: true
+
+    auth:
+        apiEndpoints:
+            - auth
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: auth
+                    changeOrigin: true
+
+    documentation:
+        apiEndpoints:
+            - documentation
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: documentation
+                    changeOrigin: true
+
+    dashboard:
+        apiEndpoints:
+            - dashboard
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: dashboard
+                    changeOrigin: true
+
+    player:
+        apiEndpoints:
+            - player
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: player
+                    changeOrigin: true
+
+    project:
+        apiEndpoints:
+            - project
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: project
+                    changeOrigin: true
+
+    status:
+        apiEndpoints:
+            - status
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: status
+                    changeOrigin: true
+
+    user:
+        apiEndpoints:
+            - user 
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: user
+                    changeOrigin: true
+
+    basic:
+        apiEndpoints:
+            - api
+        policies:
+            - proxy:
+                - action:
+                    serviceEndpoint: httpbin
+                    changeOrigin: true

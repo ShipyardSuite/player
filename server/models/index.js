@@ -1,9 +1,7 @@
-'use strict';
+"use strict";
 
-const Player = require('./Player');
-const Project = require('./Project');
+import Project from "./Project";
+import Player from "./Player";
 
-module.exports = {
-	Player,
-	Project
-};
+export default { Project, Player };
+export { Project, Player };
