@@ -1,8 +1,11 @@
-![GitHub last commit (branch)](https://img.shields.io/github/last-commit/shipyardsuite/player/develop?color=3cafe2&style=flat-square)
-![Docker Image Version (latest by date)](https://img.shields.io/docker/v/shipyardsuite/player?color=3cafe2&sort=date&style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/shipyardsuite/player?color=3cafe2&style=flat-square)
-![Maintenance](https://img.shields.io/maintenance/yes/2020?color=3cafe2&style=flat-square)
-![GitHub](https://img.shields.io/github/license/shipyardsuite/player?color=3cafe2&style=flat-square)
+![CircleCI](https://img.shields.io/circleci/build/github/ShipyardSuite/player/develop?label=build%20%28develop%29&logo=circleci&style=flat-square)
+![CircleCI](https://img.shields.io/circleci/build/github/ShipyardSuite/player/master?label=build%20%28master%29&logo=circleci&style=flat-square)
+![Docker Image Version (latest by date)](https://img.shields.io/docker/v/shipyardsuite/player?logo=docker&logoColor=ffffff&sort=date&style=flat-square)
+![Codecov branch](https://img.shields.io/codecov/c/github/ShipyardSuite/player/develop?label=coverage&logo=codecov&logoColor=ffffff&style=flat-square)
+![Codacy branch grade](https://img.shields.io/codacy/grade/c969ebe84a6c47fba2968005ec425eb3/develop?label=code%20quality%20&logo=codacy&style=flat-square)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/shipyardsuite/player/develop?logo=github&style=flat-square)
+![GitHub issues](https://img.shields.io/github/issues-raw/shipyardsuite/player?logo=github&style=flat-square)
+![GitHub](https://img.shields.io/github/license/shipyardsuite/player?style=flat-square)
 
 # player
 
