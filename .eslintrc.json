@@ -1,0 +1,47 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "mocha": true,
+        "es6": true,
+        "node": true
+    },
+    "ignorePatterns": [
+        "dist/*",
+        "node_modules/*",
+        "legacy/*",
+        "webpack.*"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "settings": {
+        "react": {
+            "version": "latest"
+        }
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+        "indent": [ "error", 4 ],
+        "linebreak-style": [ "error","unix" ],
+        "quotes": [ "error","single" ],
+        "semi": [ "error","always" ],
+        "brace-style": [ "error","allman" ],
+        "object-curly-newline": [ "error", { "consistent": true } ],
+        "object-curly-spacing": [ "error", "always" ],
+        "array-bracket-spacing": [ "error", "always" ],
+        "eol-last": [ "error", "always" ],
+        "no-multiple-empty-lines": [ "error", { "max": 1, "maxEOF": 1 } ],
+        "lines-around-comment": [ "error", { "beforeBlockComment": true, "beforeLineComment": true } ]
+    }
+}
